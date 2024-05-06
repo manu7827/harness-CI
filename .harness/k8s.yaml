@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: k8s
+  identifier: k8s
+  orgIdentifier: default
+  projectIdentifier: testgcp
+  environmentRef: prepod
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: gkeconnector
+    namespace: default
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
