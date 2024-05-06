@@ -1,0 +1,8 @@
+environment:
+  name: prepod
+  identifier: prepod
+  description: ""
+  tags: {}
+  type: PreProduction
+  orgIdentifier: default
+  projectIdentifier: testgcp
