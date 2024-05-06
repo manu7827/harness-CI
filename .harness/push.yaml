@@ -38,7 +38,7 @@ pipeline:
             enabled: false
             paths: []
     - stage:
-        name: deploy
+        name: deploy-to-gke
         identifier: deploy
         description: ""
         type: Deployment
