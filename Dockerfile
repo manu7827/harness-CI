@@ -1,6 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.5
 # 1st insert
 # 2nd insert
+# 3rd insert
 
 MAINTAINER Muhammad Edwin < edwin at redhat dot com >
 
