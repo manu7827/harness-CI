@@ -34,3 +34,5 @@ pipeline:
                     repo: manu7827/harness-build-images
                     tags:
                       - 0.0.1
+        delegateSelectors:
+          - kubernetes-delegate
