@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: harness-deployment
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: harness
+ template:
+   metadata:
+     labels:
+       app: harness
+   spec:
+     containers:
+     - name: harness-container
+       image: manu7827/harness-build-images:latest
+       ports:
+       - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: harness-service
+spec:
+ selector:
+   app: harness
+ ports:
+   - protocol: TCP
+     port: 80
+     targetPort: 80
+ type: LoadBalancer
