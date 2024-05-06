@@ -11,7 +11,7 @@ pipeline:
         build: <+input>
   stages:
     - stage:
-        name: build
+        name: build-and-push-to-dockerhub
         identifier: build
         description: ""
         type: CI
@@ -34,6 +34,9 @@ pipeline:
                     repo: manu7827/harness-build-images
                     tags:
                       - latest
+          caching:
+            enabled: false
+            paths: []
     - stage:
         name: deploy
         identifier: deploy
