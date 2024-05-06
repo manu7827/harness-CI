@@ -1,0 +1,40 @@
+pipeline:
+  name: docker-build-push
+  identifier: dockerbuildpush
+  projectIdentifier: testgcp
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: github1
+        build: <+input>
+  stages:
+    - stage:
+        name: checkout
+        identifier: checkout
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: account.harnessImage
+                    repo: manu7827/harness-build-images
+                    tags:
+                      - 0.0.1
+        delegateSelectors:
+          - docker-delegate
+        when:
+          pipelineStatus: All
