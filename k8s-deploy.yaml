@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: harness-deployment-1
+ name: harness-deployment-2
 spec:
  replicas: 3
  selector:
@@ -21,7 +21,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
- name: harness-service
+ name: harness-service-2
 spec:
  selector:
    app: harness
