@@ -16,7 +16,7 @@ spec:
      - name: harness-container
        image: manu7827/harness-build-images:latest
        ports:
-       - containerPort: 80
+       - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
