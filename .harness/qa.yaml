@@ -1,0 +1,8 @@
+environment:
+  name: qa
+  identifier: qa
+  description: ""
+  tags: {}
+  type: PreProduction
+  orgIdentifier: default
+  projectIdentifier: testgcp
