@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: preprod
+  identifier: preprod
+  orgIdentifier: default
+  projectIdentifier: testgcp
+  environmentRef: devtest
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: gkeconnector
+    namespace: default
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
